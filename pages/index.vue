@@ -1,6 +1,10 @@
 <template>
-  <div>
-    home page
+  <div class="flex flex-col">
+    <div class="m-auto">
+     <NuxtLink to="/articles">
+      Articles
+     </NuxtLink>
+    </div>
   </div>
 </template>
 
