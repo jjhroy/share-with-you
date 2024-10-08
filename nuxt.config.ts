@@ -3,19 +3,34 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   app: {
     head: {
-      title: 'share with you'
-    }
-  },
-  vite: {
-    server: {
-      open: true
-    }
+      title: 'share with you',
+    },
   },
 
   devServer: {
     port: 2333,
-    host: '127.0.0.1'
+    host: '0.0.0.0',
   },
 
-  modules: ['@unocss/nuxt', '@nuxt/content']
-})
+  css: ['@unocss/reset/tailwind.css', './assets/css/global.css'],
+
+  modules: [
+    '@vueuse/nuxt',
+    '@unocss/nuxt',
+    '@nuxt/content',
+    '@nuxt/icon',
+    'nuxt-radash',
+    [
+      '@pinia/nuxt',
+      {
+        autoImports: [
+          // 自动引入 `defineStore()`
+          'defineStore',
+          // 自动引入 `defineStore()` 并重命名为 `definePiniaStore()`
+          ['defineStore', 'definePiniaStore'],
+        ],
+      },
+    ],
+    'pinia-plugin-persistedstate/nuxt',
+  ],
+});

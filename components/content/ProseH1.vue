@@ -1,15 +1,13 @@
 <template>
-    <h1>
-        <slot />
-    </h1>
+  <h1>
+    <slot />
+  </h1>
 </template>
 
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <style scoped>
-h1 {
+  h1 {
     position: relative;
     padding-left: 10px;
     padding-right: 10px;
@@ -18,21 +16,21 @@ h1 {
     margin-bottom: 10px;
     font-size: 24px;
     line-height: 1.5;
-    transition: color .35s;
-    color: #005bb7
-}
+    transition: color 0.35s;
+    color: #005bb7;
+  }
 
-h1:before {
-    content: "「";
+  h1:before {
+    content: '「';
     position: absolute;
     top: -6px;
-    left: -14px
-}
+    left: -14px;
+  }
 
-h1:after {
-    content: "」";
+  h1:after {
+    content: '」';
     position: relative;
     top: 6px;
-    right: auto
-}
+    right: auto;
+  }
 </style>
